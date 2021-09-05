@@ -1,5 +1,6 @@
 var startBtn = document.getElementById("startBtn");
-var nextButton = document.getElementById("nextButton")
+var nextButton = document.getElementById("nextButton");
+var timerEl = document.getElementById("timer");
 
 var QQ = document.getElementById("Qs");
 var A = document.getElementById("a");
@@ -25,11 +26,34 @@ var questions = [
     }
 ];
 
+function timer() {
+    var timeLeft = 60;
+
+    var timeInterval = setInterval(function () {
+        if (timeLeft > 0) {
+            timerEl.textContent = "Time Remaining: " + timeLeft;
+            timeLeft--;
+        } else {
+            timerEl.textContent = "You Failed :("; 
+            clearInterval(timeInterval);
+        }
+    }, 600); 
+
+    document.getElementById("timer").style.display = "none";
+
+    quiz();
+}
+
 function quiz() {
     document.getElementById("startBtn").style.display = "none";
     document.getElementById("questions").style.display = "block";
     document.getElementById("intro").style.display = "none";
+    document.getElementById("nextButton").style.display = "display";
     question();
+
+    if (a === correct) {
+        console.log('Correct')
+    }
 }
 
 function question() {
@@ -44,8 +68,6 @@ function question() {
     }
 }
 
-
+startBtn.onclick = timer;
 
 nextButton.onclick = quiz;
-
-startBtn.onclick = quiz;
