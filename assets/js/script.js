@@ -1,5 +1,4 @@
 var startBtn = document.getElementById("startBtn");
-var nextButton = document.getElementById("nextButton");
 var timerEl = document.getElementById("timer");
 
 var QQ = document.getElementById("Qs");
@@ -48,7 +47,6 @@ function quiz() {
     document.getElementById("startBtn").style.display = "none";
     document.getElementById("questions").style.display = "block";
     document.getElementById("intro").style.display = "none";
-    document.getElementById("nextButton").style.display = "display";
     question();
 }
 
@@ -66,4 +64,4 @@ function question() {
 
 startBtn.onclick = timer;
 
-nextButton.onclick = quiz;
+
