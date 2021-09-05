@@ -50,10 +50,6 @@ function quiz() {
     document.getElementById("intro").style.display = "none";
     document.getElementById("nextButton").style.display = "display";
     question();
-
-    if (a === correct) {
-        console.log('Correct')
-    }
 }
 
 function question() {
